@@ -14,6 +14,12 @@ const input = document.getElementById("imeInput")
 input.addEventListener("keydown", function(event) {
   const key = event.key
 
+  // 當輸入空格或 Enter，清空 buffer
+  if (key === " " || key === "Enter") {
+    buffer = ""
+    return
+  }
+
   // 只處理字母
   if (!/^[a-z]$/i.test(key)) return
 
